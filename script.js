@@ -7,15 +7,18 @@ let hrs = document.querySelector(".hrs");
 let min = document.querySelector(".min");
 let sec = document.querySelector(".sec");
 let mSec = document.querySelector(".msec");
+const moon = document.querySelector(".moon");
 
 let mSecN = Number(mSec.textContent);
 let secN = Number(sec.textContent);
 let hrsN = Number(hrs.textContent);
+let clickmoon = false;
 let minN = Number(min.textContent);
 let pause = true;
 
 let intervalId;
 let intervalTime = 10;
+let click = true;
 
 const updateTimer = () => {
   if (pause) {
@@ -80,4 +83,38 @@ reset.addEventListener("click", () => {
   }, 20);
   reset.classList.remove("click");
   stop.src = "play.png";
+});
+
+moon.addEventListener("click", () => {
+  clickmoon = !clickmoon;
+
+  if (clickmoon) {
+    document.querySelector(".body").style.backgroundColor = "#ddd";
+    document.querySelector(".min").style.color = "#111";
+    document.querySelector(".sec").style.color = "#111";
+    document.querySelector(".msec").style.color = "#111";
+    document.querySelector(".hrs").style.color = "#111";
+    document.querySelector(".change").style.color = "#111";
+    document.querySelector(".change2").style.color = "#111";
+    document.querySelector(".change3").style.color = "#111";
+    document.querySelector(".start").classList.add("blackc");
+    document.querySelector(".reset").classList.add("blackc");
+    document.querySelector(".moon").classList.add("blackc");
+    start.style.border = "2px solid #111";
+    reset.style.border = "2px solid #111";
+  } else {
+    document.querySelector(".body").style.backgroundColor = "#111";
+    document.querySelector(".min").style.color = "#fff";
+    document.querySelector(".sec").style.color = "#fff";
+    document.querySelector(".msec").style.color = "#fff";
+    document.querySelector(".hrs").style.color = "#fff";
+    document.querySelector(".change").style.color = "#fff";
+    document.querySelector(".change2").style.color = "#fff";
+    document.querySelector(".change3").style.color = "#fff";
+    document.querySelector(".start").classList.remove("blackc");
+    document.querySelector(".reset").classList.remove("blackc");
+    moon.classList.remove("blackc");
+    start.style.border = "2px solid #fff";
+    reset.style.border = "2px solid #fff";
+  }
 });

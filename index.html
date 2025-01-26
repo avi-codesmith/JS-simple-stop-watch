@@ -6,15 +6,31 @@
     <title>JS stopwatch</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="body">
+    <div class="moon-wrapper">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="moon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+        />
+      </svg>
+    </div>
     <div class="container">
       <div class="display">
         <div class="hrs num">00</div>
-        :
+        <p class="change">:</p>
         <div class="min num">00</div>
-        :
+        <p class="change2">:</p>
         <div class="sec num">00</div>
-        :
+        <p class="change3">:</p>
         <div class="msec num">00</div>
       </div>
       <div class="icon-wrapper">
