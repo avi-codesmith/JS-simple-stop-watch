@@ -5,12 +5,14 @@
   padding: 0;
   box-sizing: border-box;
   user-select: none;
+  /* overflow: hidden; */
 }
 
 body {
   font-family: "Rubik", sans-serif;
   background-color: #111;
   color: #fff;
+  overflow: hidden;
 }
 
 .moon {
@@ -53,6 +55,7 @@ body {
 
 .wrapper {
   border: 2px solid #fff;
+  /* background-color: #111; */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -101,4 +104,58 @@ img {
   stroke: #111;
   fill: #111;
   filter: invert(1%);
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  height: 30vw;
+  width: 30vw;
+  top: 0rem;
+  left: 0;
+  background-image: linear-gradient(
+    to top,
+    #dbdcd7 0%,
+    #dddcd7 24%,
+    #e2c9cc 30%,
+    #e7627d 46%,
+    #b8235a 59%,
+    #801357 71%,
+    #3d1635 84%,
+    #1c1a27 100%
+  );
+  /* background-color: transparent; */
+  z-index: -1;
+  border-radius: 50%;
+  box-shadow: 0px 0px 8rem 2rem #7a3fdf;
+  animation: moveAnimation 30s infinite /*alternate*/;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+@keyframes moveAnimation {
+  0% {
+    top: 20rem;
+    left: 50%;
+  }
+  20% {
+    top: 5rem;
+    left: 10%;
+  }
+  40% {
+    top: 2rem;
+    left: 45%;
+  }
+  60% {
+    top: 8%;
+    left: 20%;
+  }
+  80% {
+    top: 2rem;
+    left: 80%;
+  }
+  100% {
+    top: 0%;
+    left: 40%;
+  }
 }
